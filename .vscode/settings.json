@@ -1,0 +1,14 @@
+{
+    "python.linting.enable": True,
+    "python.linting.pylintEnable": True,
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/*.pyc": true,
+        "**/__pycache__": true,
+        "**/*.pytest_cache": true
+    }
+}
