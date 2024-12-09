@@ -51,3 +51,18 @@ class OrdersRepository:
             self.__collection_name)
         data = collection.find({"_id": ObjectId(object_id)})
         return data
+
+    def edit_registry(self, object_id: str) -> None:
+        collection = self.__db_connection.get_collection(
+            self.__collection_name)
+        collection.update_one(
+            {"_id": ObjectId(object_id)},  # filters
+            {"$set": {"mae.do.badanha": True, "coupon": False}}  # data edit
+        )
+
+    def edit_many_registries(self):
+        collection = self.__db_connection.get_collection(
+            self.__collection_name)
+        collection.update_many(
+            {"member.master": True},
+            {"$set": {"items[0].quantity": 6}})

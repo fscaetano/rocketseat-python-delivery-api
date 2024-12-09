@@ -23,6 +23,7 @@ def test_insert_list_of_document():
     orders_repository.insert_list_of_documents(my_docs)
 
 
+@pytest.mark.skip(reason="db interaction")
 def test_select_many():
     orders_repository = OrdersRepository(conn)
     doc_filter = {"coupon": True}
@@ -32,6 +33,7 @@ def test_select_many():
     [print(e) for e in data]
 
 
+@pytest.mark.skip(reason="db interaction")
 def test_select_one():
     orders_repository = OrdersRepository(conn)
     doc_filter = {"coupon": False}
@@ -41,6 +43,7 @@ def test_select_one():
     print(data)
 
 
+@pytest.mark.skip(reason="db interaction")
 def test_select_many_with_properties():
     orders_repository = OrdersRepository(conn)
     doc_filter = {"coupon": True}
@@ -50,6 +53,7 @@ def test_select_many_with_properties():
     [print(e) for e in data]
 
 
+@pytest.mark.skip(reason="db interaction")
 def test_select_if_property_exists():
     orders_repository = OrdersRepository(conn)
     data = orders_repository.select_if_property_exists()
@@ -58,6 +62,7 @@ def test_select_if_property_exists():
     [print(e) for e in data]
 
 
+@pytest.mark.skip(reason="db interaction")
 def test_select_many_with_multiple_filters():
     orders_repository = OrdersRepository(conn)
     doc_filter = {
@@ -70,6 +75,7 @@ def test_select_many_with_multiple_filters():
     [print(e) for e in data]
 
 
+@pytest.mark.skip(reason="db interaction")
 def test_select_many_with_nested_namesd_field_filters():
     orders_repository = OrdersRepository(conn)
     doc_filter = {
@@ -81,6 +87,7 @@ def test_select_many_with_nested_namesd_field_filters():
     [print(e) for e in data]
 
 
+@pytest.mark.skip(reason="db interaction")
 def test_select_many_with_or_filters():
     orders_repository = OrdersRepository(conn)
     doc_filter = {
@@ -95,6 +102,7 @@ def test_select_many_with_or_filters():
     [print(e) for e in data]
 
 
+@pytest.mark.skip(reason="db interaction")
 def test_select_by_object_id():
     orders_repository = OrdersRepository(conn)
     object_id = "6756692b1bfaedf8da6e3532"
@@ -102,3 +110,16 @@ def test_select_by_object_id():
 
     print()
     [print(e) for e in data]
+
+
+@pytest.mark.skip(reason="db interaction")
+def test_update_object_id():
+    orders_repository = OrdersRepository(conn)
+    object_id = "6756692cc802f1459c434795"
+    orders_repository.edit_registry(object_id)
+
+
+@pytest.mark.skip(reason="db interaction")
+def test_update_many():
+    orders_repository = OrdersRepository(conn)
+    orders_repository.edit_many_registries()
