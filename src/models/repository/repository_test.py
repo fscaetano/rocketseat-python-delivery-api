@@ -123,3 +123,21 @@ def test_update_object_id():
 def test_update_many():
     orders_repository = OrdersRepository(conn)
     orders_repository.edit_many_registries()
+
+
+@pytest.mark.skip(reason="db interaction")
+def test_update_increment():
+    orders_repository = OrdersRepository(conn)
+    orders_repository.edit_with_increment()
+
+
+@pytest.mark.skip(reason="db interaction")
+def test_delete_registry():
+    orders_repository = OrdersRepository(conn)
+    orders_repository.delete_registry()
+
+
+@pytest.mark.skip(reason="db interaction")
+def test_delete_registries():
+    orders_repository = OrdersRepository(conn)
+    orders_repository.delete_registries()

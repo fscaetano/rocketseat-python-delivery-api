@@ -65,4 +65,21 @@ class OrdersRepository:
             self.__collection_name)
         collection.update_many(
             {"member.master": True},
-            {"$set": {"items[0].quantity": 6}})
+            {"$set": {"counter": 2}})
+
+    def edit_with_increment(self):
+        collection = self.__db_connection.get_collection(
+            self.__collection_name)
+        collection.update_many(
+            {"member.master": True},
+            {"$inc": {"counter": 3}})
+
+    def delete_registry(self):
+        collection = self.__db_connection.get_collection(
+            self.__collection_name)
+        collection.delete_one({"_id": ObjectId("6756691bf2a4dfe593d32d46")})
+
+    def delete_registries(self):
+        collection = self.__db_connection.get_collection(
+            self.__collection_name)
+        collection.delete_many({"d": {"$exists": True}})
