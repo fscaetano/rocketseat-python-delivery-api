@@ -1,0 +1,25 @@
+meta {
+  name: registry order
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{base}}/delivery/order
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "data":{
+      "name": "fulano",
+      "address": "rua da paz, 123",
+      "coupon": false,
+      "items": [
+        { "item": "soda", "quantity": 2},
+        { "item": "pizza", "quantity": 3}
+      ]
+    }
+  }
+}
