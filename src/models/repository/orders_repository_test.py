@@ -44,3 +44,6 @@ def test_select_many_with_properties():
 
     print()
     print(collection.find_attributes)
+    
+    assert collection.find_attributes["args"][0] == doc
+    assert collection.find_attributes["args"][0] == {'_id': 0, 'coupon': 0}
