@@ -116,7 +116,8 @@ def test_select_by_object_id():
 def test_update_object_id():
     orders_repository = OrdersRepository(conn)
     object_id = "6756692cc802f1459c434795"
-    orders_repository.edit_registry(object_id)
+    update_fields = {"mae.do.badanha": True, "coupon": False}
+    orders_repository.edit_registry(object_id, update_fields)
 
 
 @pytest.mark.skip(reason="db interaction")
